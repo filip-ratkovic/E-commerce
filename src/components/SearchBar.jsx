@@ -1,10 +1,18 @@
 import {useState} from 'react'
 import {Navigation} from 'react-router-dom'
-import {Paper, IconButter} from '@mui/material'
-import {SearchIcon} from '@mui/icons-material'
+import {Paper, IconButton} from '@mui/material'
+import {Search} from '@mui/icons-material'
 function SearchBar() {
   return (
-    <div>SearchBar</div>
+    <Paper>
+        <input
+        placeholder="Search..."
+        onChange={()=> {}}
+        />
+        <IconButton>
+            <Search/>
+        </IconButton>
+    </Paper>
   )
 }
 
