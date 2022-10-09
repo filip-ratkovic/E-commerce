@@ -1,0 +1,10 @@
+:root{
+    --light:#e7e7e7;
+    --dark:
+}
+
+body{
+    height: 100vh;
+    background: var(--light) ;
+    background-size: cover;
+}
