@@ -1,10 +1,51 @@
 :root{
-    --light:#e7e7e7;
-    --dark:
+    --light:#fff;
+    --dark:rgb(17, 17, 17);
+    --lightButton: linear-gradient(90deg, #acb6e5, #86fde8);
+    --textColor:#28f7d1;
+    --text: #393939;
+    --text3:#888;
+    --text2:#464646;
+}
+
+*{
+    box-sizing: border-box;
 }
 
 body{
-    height: 100vh;
+    margin: 20px 60px;
     background: var(--light) ;
-    background-size: cover;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-name {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+nav a{
+    text-decoration: none;
+    color: var(--text2);
+    letter-spacing: 1.5px;
+}
+
+nav a:hover  {
+    color: var(--text3);
+    text-decoration: underline;
+    text-decoration-color: var(--textColor);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 10px;
+    cursor: pointer;
+}
+
+.nav-cartLogin{
+display: flex;
+justify-content: center;
 }
