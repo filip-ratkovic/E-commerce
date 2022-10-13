@@ -3,6 +3,7 @@
     --dark:rgb(17, 17, 17);
     --lightButton: linear-gradient(90deg, #acb6e5, #86fde8);
     --textColor:#28f7d1;
+    --textColorDark:#087964;
     --text: #393939;
     --text3:#888;
     --text2:#464646;
@@ -26,7 +27,7 @@ nav {
 }
 
 .nav-name {
-    width: 20%;
+    width: 200px;
     display: flex;
     justify-content: space-between;
 }
@@ -48,4 +49,35 @@ nav a:hover  {
 .nav-cartLogin{
 display: flex;
 justify-content: center;
+}
+
+.nav-cart  {
+    margin-right: 10px;
+    position: relative;
+}
+
+.nav-cart-num{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--textColorDark);
+    color: var(--light);
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    text-align: center;
+}
+
+
+.nav-cartLogin span {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.nav-cartLogin img {
+    vertical-align: middle;
+}
+
+.nav-active {
+    color: var(--text3);
 }
