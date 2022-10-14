@@ -4,6 +4,7 @@ import Home from './components/Home'
 import Nav from './components/Nav'
 import Products from './components/Products'
 import Cart from './components/Cart'
+import Login from './components/Login'
 
 import "./App.css"
 
@@ -18,6 +19,8 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={<Products/>} />
         <Route path="/korpa" element={<Cart/>} />
+        <Route path="/login" element={<Login/>} />
+
 
       </Routes>
     </div>

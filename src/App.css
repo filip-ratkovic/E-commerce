@@ -1,23 +1,24 @@
-:root{
-    --light:#fff;
-    --dark:rgb(17, 17, 17);
+:root {
+    --light: #fff;
+    --dark: rgb(17, 17, 17);
     --lightButton: linear-gradient(90deg, #acb6e5, #86fde8);
-    --textColor:#28f7d1;
-    --textColorDark:#087964;
+    --textColor: #28f7d1;
+    --textColorDark: #087964;
     --text: #393939;
-    --text3:#888;
-    --text2:#464646;
+    --text3: #888;
+    --text2: #464646;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 20px 60px;
-    background: var(--light) ;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:16px;
+    background: var(--light);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    position: relative;
 }
 
 nav {
@@ -31,13 +32,14 @@ nav {
     display: flex;
     justify-content: space-between;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     color: var(--text2);
     letter-spacing: 1.5px;
 }
 
-nav a:hover  {
+nav a:hover {
     color: var(--text3);
     text-decoration: underline;
     text-decoration-color: var(--textColor);
@@ -46,17 +48,17 @@ nav a:hover  {
     cursor: pointer;
 }
 
-.nav-cartLogin{
-display: flex;
-justify-content: center;
+.nav-cartLogin {
+    display: flex;
+    justify-content: center;
 }
 
-.nav-cart  {
+.nav-cart {
     margin-right: 10px;
     position: relative;
 }
 
-.nav-cart-num{
+.nav-cart-num {
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -80,4 +82,32 @@ justify-content: center;
 
 .nav-active {
     color: var(--text3);
+}
+
+.login-dropdown {
+    width: 300px;
+    height: 500px;
+    background: var(--lightButton);
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    animation: loginMove 1s  ;
+    top: 50px;
+    right: 50%;
+    transform:translateX(50%)
+}
+
+@keyframes loginMove {
+    0% {
+        width: 0px;
+        height: 0px;
+        top: 0;
+        right: 0px;
+    }
+    100% {
+        width: 300px;
+        height: 500px;
+        top: 50px;
+        right: 50%;
+    }
 }

@@ -1,8 +1,9 @@
 import React from 'react'
 
-function Cart() {
+
+function Cart({handleCartClick, cartActive, setCartActive}) {
   return (
-    <div>Cart</div>
+    <div >cart </div>
   )
 }
 
