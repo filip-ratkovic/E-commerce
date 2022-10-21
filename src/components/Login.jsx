@@ -1,6 +1,17 @@
-import React from 'react'
+import { useEffect } from 'react';
+import {React, useState} from 'react'
 
 function Login() {
+const [loginUp, setLoginUp] = useState(false);
+
+const loginUpHandler = () => {
+  if(loginUp) {
+  }else {
+    setLoginUp(curent => !curent);
+  }
+}
+
+
   return (
     <div className="login-body">
       <div className="login-dropdown" >
@@ -14,7 +25,7 @@ function Login() {
               <button className="btn-signup">Sign up</button>
             </form>
           </div>
-          <div className="login-conteiner">
+          <div className= {`${loginUp ? "login-conteiner loginUp-active" : ""}`} onClick={loginUpHandler}>
             <h2 id="login-title">Login</h2>
             <form action="">
               <input type="email" name="email" id="loginEmail" placeholder="Email" />
