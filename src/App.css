@@ -86,13 +86,13 @@ nav a:hover {
 
 .login-dropdown {
     width: 300px;
-    height: 500px;
-    background: var(--lightButton);
+    height: 450px;
+    background: var(--textColorDark);
     position: absolute;
-    animation: loginMove 1s  ;
-    top: 50px;
+    animation: loginMove 1s;
+    top: 100px;
     right: 50%;
-    transform:translateX(50%);
+    transform: translateX(50%);
     border-radius: 4px;
     box-shadow: 0px 16px 40px rgb(40, 247, 209, 0.3);
     color: var(--light);
@@ -105,10 +105,11 @@ nav a:hover {
         top: 0;
         right: 0px;
     }
+
     100% {
         width: 300px;
         height: 500px;
-        top: 50px;
+        top: 100px;
         right: 50%;
     }
 }
@@ -117,33 +118,54 @@ nav a:hover {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow:hidden;
+    overflow: hidden;
     text-align: center;
 }
 
 .signup-conteiner input {
-width:70%;
-padding: 10px;
-color: #888;
-border: none;
-outline: none;
-margin: 5px;
-border-radius: 4px;
-}
-.btn-signup {
-    background-color: #087964;
-    color: #fff;
-    border:none;
+    width: 70%;
+    padding: 10px;
+    border: none;
     outline: none;
+    margin: 5px;
     border-radius: 4px;
-padding: 5px 15px;
-}
-.login-conteiner {
-    background-color: var(--light);
-    position: absolute;
-    top: 100px;
 }
 
-.loginUp-active{
-    top:0
+.login-conteiner input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    border-radius: 4px;
+    background-color: rgb(243, 240, 240);
+}
+
+.login-main button {
+    background-color: #0b6958;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 5px 15px;
+    width: 70%;
+}
+
+.login-conteiner {
+    background-color: #fff;
+    color: #087964;
+    position: absolute;
+    top: 370px;
+    border-radius: 30px 30px 0px 0px;
+    height: 100%;
+    transition: all 1s;
+}
+
+.loginUp-active {
+    top: 80px;
+}
+
+.login-main h2 {
+    margin-top: 40px;
+    cursor: pointer;
 }
