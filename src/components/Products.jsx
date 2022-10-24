@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Loading from './Loading';
 import ProductCard from './ProductCard';
 const url = "https://course-api.com/react-store-products"
-function Products() {
+function Products({getProductsData}) {
   const [productsData, setProductData] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -12,11 +12,11 @@ const fetchProductsData = async () => {
         try {
             const response = await fetch(url);
             const productData = await response.json();
-            setLoading(true);
+            setLoading(false);
             setProductData(productData);
-            console.log(productData)
+            getProductsData(productData)
         } catch (error) {
-            setLoading(true);
+            setLoading(false);
             console.log(error);
         }
 }
