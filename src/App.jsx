@@ -17,7 +17,6 @@ function App() {
 
   const getProductsData = (data) => {
     setProductData(data)
-    console.log(data);
   }
   return (
     <div>

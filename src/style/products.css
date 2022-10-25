@@ -1,4 +1,19 @@
-/*                    PRODUCT CARD */
+:root {
+  --white: #fff;
+  --white2:#e7f1f1;
+  --black: #313131;
+  --black2:#464646;
+  --grey:#888; 
+  --primary:#dbd0cc;
+  --mixed: linear-gradient(90deg, #4b9398 , #e7f1f1);
+  --blue:#4b9398;
+  --blueLight:#0bcece;
+  --gold:#e4a23d;
+  --blueBtn:#26596d;
+  --tittle:24px;
+  --text:16px;
+  --number:12px;
+}
 
 .product-content {
     border: 1px solid brown;
@@ -9,7 +24,6 @@
   
   .product-card {
     width: 30%;
-  /* height:300px;  */
     margin: 10px;
     background-color: var(--background);
     border-radius: 8px;

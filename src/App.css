@@ -1,23 +1,31 @@
 :root {
-    --light: #fff;
-    --dark: rgb(17, 17, 17);
-    --lightButton: linear-gradient(90deg, #acb6e5, #86fde8);
-    --textColor: #28f7d1;
-    --textColorDark: #087964;
-    --text: #393939;
-    --text3: #888;
-    --text2: #464646;
+    --white: #fff;
+    --white2:#e7f1f1;
+    --black: #313131;
+    --black2:#464646;
+    --grey:#888; 
+    --primary:#dbd0cc;
+    --mixed: linear-gradient(90deg, #4b9398 , #e7f1f1);
+    --blue:#4b9398;
+    --blueLight:#0bcece;
+    --gold:#e4a23d;
+    --blueBtn:#26596d;
+    --tittle:24px;
+    --text:16px;
+    --number:12px;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     margin: 20px 60px;
-    background: var(--light);
+    background: var(--white);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: var(--text);
     position: relative;
 }
 
@@ -35,14 +43,15 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: var(--text2);
+    color: var(--black);
     letter-spacing: 1.5px;
+    font-size: 20px;
 }
 
 nav a:hover {
-    color: var(--text3);
+    color: var(--black2);
     text-decoration: underline;
-    text-decoration-color: var(--textColor);
+    text-decoration-color: var(--blueLight);
     text-decoration-thickness: 1.5px;
     text-underline-offset: 10px;
     cursor: pointer;
@@ -62,8 +71,8 @@ nav a:hover {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: var(--textColorDark);
-    color: var(--light);
+    background-color: var(--blue);
+    color: var(--white);
     position: absolute;
     top: -5px;
     right: -5px;
@@ -81,21 +90,21 @@ nav a:hover {
 }
 
 .nav-active {
-    color: var(--text3);
+    color: var(--grey);
 }
 
 .login-dropdown {
     width: 300px;
     height: 450px;
-    background: var(--textColorDark);
+    background: var(--blue);
     position: absolute;
     animation: loginMove 1s;
     top: 100px;
     right: 50%;
     transform: translateX(50%);
     border-radius: 4px;
-    box-shadow: 0px 16px 40px rgb(40, 247, 209, 0.3);
-    color: var(--light);
+    box-shadow: 0px 16px 40px rgba(17, 167, 236, 0.3);
+    color: var(--white);
 }
 
 @keyframes loginMove {
@@ -138,12 +147,12 @@ nav a:hover {
     outline: none;
     margin: 5px;
     border-radius: 4px;
-    background-color: rgb(243, 240, 240);
+    background-color: rgba(56, 55, 55, 0.089);
 }
 
 .login-main button {
-    background-color: #0b6958;
-    color: #fff;
+    background-color: var(--blueBtn);
+    color: var(--white);
     border: none;
     outline: none;
     border-radius: 4px;
@@ -152,8 +161,8 @@ nav a:hover {
 }
 
 .login-conteiner {
-    background-color: #fff;
-    color: #087964;
+    background-color: var(--white);
+    color: var(--blue);
     position: absolute;
     top: 370px;
     border-radius: 30px 30px 0px 0px;
