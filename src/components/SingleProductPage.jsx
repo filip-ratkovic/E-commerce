@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import SingleProductReviews from './SingleProductReviews';
 
 function SingleProductPage({ singleProductId }) {
     const productId = singleProductId;
@@ -12,6 +13,7 @@ function SingleProductPage({ singleProductId }) {
         const url = `https://course-api.com/react-store-single-product?id=${productId}`;
         const response = await axios.get(url);
         setProduct(response.data);
+        console.log(response.data)
     }
 
 
@@ -37,11 +39,8 @@ function SingleProductPage({ singleProductId }) {
 
                 <div className="single-product-text">
                     <h1>{product && product.name.toUpperCase()}</h1>
-                    <div className="single-product-reviews">
-                        <p>*****</p>
-                    </div>
+                    <SingleProductReviews reviews = {product && product.reviews} star = {product &&  product.stars}/>
                     <h4 id="single-price">${product && product.price / 100}</h4>
-                    <br />
                     <p id="single-description">{product && product.description}</p>
                     <div className="single-left">
                         <div className="single-text-left">
