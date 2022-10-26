@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SingleProductReviews from './SingleProductReviews';
+import ProductsImage from './ProductsImage';
 
 function SingleProductPage({ singleProductId }) {
     const productId = singleProductId;
@@ -30,12 +31,7 @@ function SingleProductPage({ singleProductId }) {
             </div>
 
             <div className="single-product-card">
-                <div className="image-conteiner">
-                    <div className="single-product-image">
-                        <img src={product && product.images[0].url} alt={product && product.name} />
-                    </div>
-                    <div className="images-container"></div>
-                </div>
+                <ProductsImage product={product}/>
 
                 <div className="single-product-text">
                     <h1>{product && product.name.toUpperCase()}</h1>
