@@ -4,7 +4,7 @@ function Loading() {
   return (
     <div className="loading-conteiner">
       <div className="loading-cyrcle">
-        loading
+        loading...
     </div>
     </div>
   )

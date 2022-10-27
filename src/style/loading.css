@@ -28,6 +28,15 @@ height: 100px;
 position: relative;
 }
 
+.loading-cyrcle::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    top: 2px;
+    left: 2px;
+}
 
 
 
