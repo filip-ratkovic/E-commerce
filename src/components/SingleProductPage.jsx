@@ -4,18 +4,28 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SingleProductReviews from './SingleProductReviews';
 import ProductsImage from './ProductsImage';
+import Loading from './Loading';
 
 function SingleProductPage({ singleProductId, addToCart, quantityData }) {
     const productId = singleProductId;
     const [product, setProduct] = useState();
     const [counter, setCounter] = useState(1);
+    const [loading, setLoading] = useState(true);
+
 
     const getSingleProduct = async () => {
-        const url = `https://course-api.com/react-store-single-product?id=${productId}`;
-        const response = await axios.get(url);
-        setProduct(response.data);
-        console.log(response.data)
-        addToCart(response.data);
+        try{
+            const url = `https://course-api.com/react-store-single-product?id=${productId}`;
+            const response = await axios.get(url);
+            setLoading(false);
+            setProduct(response.data);
+            addToCart(response.data);
+        }
+        catch(error) {
+            setLoading(false);
+            console.log(error);
+        }
+        
     }
 
 
@@ -24,6 +34,14 @@ function SingleProductPage({ singleProductId, addToCart, quantityData }) {
     }, [])
 
     quantityData(counter)
+
+    if (loading) {
+        return (
+            <main>
+                <Loading/>
+            </main>
+        )
+      }
 
     return (
         <main className="single-product-container">
