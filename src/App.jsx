@@ -14,6 +14,18 @@ import SingleProductPage from './components/SingleProductPage'
 
 function App() {
   const [productsData, setProductData] = useState([]);
+  const [cartData, setCartData] = useState();
+  const [quantity, setQuantity] = useState();
+
+  const addToCart = (data) => {
+    setCartData(data)
+  }
+
+
+  const quantityData = (data) => {
+    setQuantity(data)
+  }
+
 
   const getProductsData = (data) => {
     setProductData(data)
@@ -24,11 +36,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={<Products getProductsData={getProductsData}/>} />
-        <Route path="/korpa" element={<Cart/>} />
+        <Route path="/korpa" element={<Cart cartData={cartData} quantity={quantity}/>} />
         <Route path="/login" element={<Login/>} />
         {productsData.map((singleProduct) => {
         return <Route path={`/products/${singleProduct.id}`} 
-        element={<SingleProductPage singleProductId={singleProduct.id} />} />
+        element={<SingleProductPage singleProductId={singleProduct.id} addToCart={addToCart} quantityData={quantityData} />} />
       })}
       </Routes>
     </div>

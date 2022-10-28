@@ -5,7 +5,7 @@ import axios from 'axios';
 import SingleProductReviews from './SingleProductReviews';
 import ProductsImage from './ProductsImage';
 
-function SingleProductPage({ singleProductId }) {
+function SingleProductPage({ singleProductId, addToCart, quantityData }) {
     const productId = singleProductId;
     const [product, setProduct] = useState();
     const [counter, setCounter] = useState(1);
@@ -15,6 +15,7 @@ function SingleProductPage({ singleProductId }) {
         const response = await axios.get(url);
         setProduct(response.data);
         console.log(response.data)
+        addToCart(response.data);
     }
 
 
@@ -22,7 +23,7 @@ function SingleProductPage({ singleProductId }) {
         getSingleProduct();
     }, [])
 
-
+    quantityData(counter)
 
     return (
         <main className="single-product-container">

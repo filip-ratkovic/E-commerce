@@ -1,9 +1,14 @@
 import React from 'react'
 
 
-function Cart({handleCartClick, cartActive, setCartActive}) {
+function Cart({cartData, quantity}) {
+  console.log(cartData)
+  console.log(quantity)
   return (
-    <div >cart </div>
+    <div>
+      <h1>{cartData.name}</h1>
+      <p>{quantity}</p>
+       </div>
   )
 }
 
