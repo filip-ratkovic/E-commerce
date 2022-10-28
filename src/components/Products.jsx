@@ -12,11 +12,11 @@ const fetchProductsData = async () => {
         try {
             const response = await fetch(url);
             const productData = await response.json();
-            setLoading(true);
+            setLoading(false);
             setProductData(productData);
             getProductsData(productData)
         } catch (error) {
-            setLoading(true);
+            setLoading(false);
             console.log(error);
         }
 }
