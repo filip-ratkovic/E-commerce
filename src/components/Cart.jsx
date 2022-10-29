@@ -2,12 +2,10 @@ import React from 'react'
 
 
 function Cart({cartData, quantity}) {
-  console.log(cartData)
-  console.log(quantity)
   return (
     <div>
-      <h1>{cartData.name}</h1>
-      <p>{quantity}</p>
+      <h1>{cartData && cartData.name}</h1>
+      <p>{1 && quantity}</p>
        </div>
   )
 }
