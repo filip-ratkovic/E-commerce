@@ -9,6 +9,7 @@ import "./App.css"
 import "./style/loading.css"
 import "./style/products.css"
 import "./style/singleProduct.css"
+import "./style/aside.css"
 import SingleProductPage from './components/SingleProductPage'
 
 
