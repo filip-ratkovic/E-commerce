@@ -19,8 +19,12 @@
     width: 20%;
     height: 100vh;
     position: sticky;
-    top: 0;
+    top: 10px;
     color: var(--black);
+  }
+
+  .aside input, select, option {
+    cursor: pointer;
   }
 
   #search{
@@ -43,7 +47,7 @@ border:1px solid var(--blue)
     color: var(--grey);
     list-style-type: none;
     cursor: pointer;
-    padding-top: 5px;
+    padding-top: 8px;
     letter-spacing:1.5px;
 
   }
@@ -53,19 +57,43 @@ border:1px solid var(--blue)
   }
 
   .company {
-    margin-top: 20px;
+    margin-top: 25px;
   }
 
   .company select {
     border: none;
     outline: none;
-    margin-top: 5px;
+    margin-top: 10px;
   }
 
   .price {
-    margin-top: 20px;
+    margin-top: 25px;
   }
   .price p {
-    margin: 5px 0;
+    margin: 10px 0;
   }
+
+  .free-shipping {
+    margin-top: 25px;
+    display: flex;
+  width: 70%;
+    justify-content: space-between;
+  }
+
+  .clear-filters{
+    margin-top: 25px;
+  }
+
+  .clear-filters button{
+    padding: 5px 10px;
+    font-size: 16px;
+    border:none;
+    outline: none;
+    background-color:rgb(170, 12, 12);
+    color: var(--white);
+    border-radius: 4px;
+   cursor: pointer;
+    letter-spacing: 1.5px;
+  }
+
   

@@ -15,7 +15,7 @@ function Products({ getProductsData }) {
       const productData = await response.json();
       setLoading(false);
       setProductData(productData);
-      console.log(productData)
+      // console.log(productData)
       getProductsData(productData)
     } catch (error) {
       setLoading(false);
@@ -62,7 +62,9 @@ function Products({ getProductsData }) {
         
         {
           productsData.map((product) => {
-            return <ProductCard key={product.id} {...product} />
+            if(product.category === "office") {
+              return <ProductCard key={product.id} {...product} />
+            }
           })
         }
       </div>

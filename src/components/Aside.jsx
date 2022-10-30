@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useMemo } from 'react';
 
 function Aside() {
-  const [priceValue, setPriceValue] = useState(0);
-  const inputValue = document.getElementById('price')
+  const [priceValue, setPriceValue] = useState(3100);
+  const inputValue = document.getElementById('price');
+
+  const handlePriceValue = (data) => {
+setPriceValue(data);
+  }
 
   return (
     <div className="aside">
@@ -33,8 +37,10 @@ function Aside() {
       <h3>Price</h3>
         <form action="price">
           <p>${priceValue} </p>
-          <label htmlFor="price">Price</label>
-          <input type="range" name="price" id="price" min="0" max="3100"/>
+          <input type="range" name="price" id="price" max="3100" min="0"  value={priceValue}
+          onChange={(el) => {
+              setPriceValue(el.target.value)
+          }}/>
         </form>
       </div>
       <div className="free-shipping">
