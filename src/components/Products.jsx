@@ -7,6 +7,17 @@ function Products({ getProductsData }) {
   const [productsData, setProductData] = useState();
   const [loading, setLoading] = useState(true);
 
+  // const getFiltersInfo = (data) => {
+  //   setFilters(data) 
+  // }
+
+  const filters = {
+    company: "ikea",
+    price: 280000,
+  }
+
+
+ 
 
   const fetchProductsData = async () => {
     setLoading(true);
@@ -36,7 +47,7 @@ function Products({ getProductsData }) {
   }
   return (
     <div className="product-page">
-      <Aside/>
+      <Aside />
       <div className="product-container">
         <div className="product-top">
           <div className="product-left">
@@ -62,7 +73,7 @@ function Products({ getProductsData }) {
         
         {
           productsData.map((product) => {
-            if(product.category === "office") {
+            if(product.price < filters.price && product.company === filters.company) {
               return <ProductCard key={product.id} {...product} />
             }
           })

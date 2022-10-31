@@ -9,6 +9,13 @@ function Aside() {
 setPriceValue(data);
   }
 
+  // getFiltersInfo({
+  //   category:"ikea",
+  //   price: priceValue
+  // })
+
+
+
   return (
     <div className="aside">
       <input type="search" name="search" id="search" placeholder="Search" />
