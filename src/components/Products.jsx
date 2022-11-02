@@ -6,18 +6,16 @@ const url = "https://course-api.com/react-store-products"
 function Products({ getProductsData }) {
   const [productsData, setProductData] = useState();
   const [loading, setLoading] = useState(true);
+  const [priceValue, setPriceValue] = useState(3100);
 
-  // const getFiltersInfo = (data) => {
-  //   setFilters(data) 
-  // }
-
-  const filters = {
-    company: "ikea",
-    price: 280000,
+  const handlePriceValue = (data) => {
+    setPriceValue(data);
   }
+const sortZA = () => {
+productsData = productsData.reverse();
+}
 
 
- 
 
   const fetchProductsData = async () => {
     setLoading(true);
@@ -26,7 +24,7 @@ function Products({ getProductsData }) {
       const productData = await response.json();
       setLoading(false);
       setProductData(productData);
-      // console.log(productData)
+      console.log(productData)
       getProductsData(productData)
     } catch (error) {
       setLoading(false);
@@ -47,7 +45,58 @@ function Products({ getProductsData }) {
   }
   return (
     <div className="product-page">
-      <Aside />
+      {/* <Aside /> */}
+
+
+      <div className="aside">
+      <input type="search" name="search" id="search" placeholder="Search" />
+      <div className="category">
+        <h3>Category</h3>
+        <ul>
+          <li className="active-list">All</li>
+          <li>Office</li>
+          <li>Living room</li>
+          <li>Kitchen</li>
+          <li>Badroom</li>
+          <li>Dining</li>
+          <li>Kids</li>
+        </ul>
+      </div>
+      <div className="company">
+        <h3>Company</h3>
+        <select name="company" onChange={(el) => {
+            console.log(el.target.value);
+          } }>
+          <option value="all">All</option>
+          <option  value="marcos">Marcos</option>
+          <option value="ikea">Ikea</option>
+          <option value="liddy">Liddy</option>
+        </select>
+      </div>
+      <div className="price">
+        <h3>Price</h3>
+        <form action="price">
+          <p>${priceValue} </p>
+          <input type="range" name="price" id="price" max="3100" min="0" value={priceValue}
+            onChange={(el) => {
+              setPriceValue(el.target.value)
+            }} />
+        </form>
+      </div>
+      <div className="free-shipping">
+        <label htmlFor="free">Free shipping</label>
+        <input type="checkbox" name="freeShipping" />
+      </div>
+      <div className="clear-filters">
+        <button>Clear filters</button>
+      </div>
+    </div>
+
+  {/* aside aside L */}
+
+
+
+
       <div className="product-container">
         <div className="product-top">
           <div className="product-left">
@@ -70,10 +119,9 @@ function Products({ getProductsData }) {
           </div>
         </div>
       <div className='product-content'>
-        
         {
           productsData.map((product) => {
-            if(product.price < filters.price && product.company === filters.company) {
+            if(product.price < priceValue*100 && product.company === "ikea" ) {
               return <ProductCard key={product.id} {...product} />
             }
           })

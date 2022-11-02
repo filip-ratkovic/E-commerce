@@ -3,12 +3,10 @@ import { useMemo } from 'react';
 
 function Aside() {
   const [priceValue, setPriceValue] = useState(3100);
-  const inputValue = document.getElementById('price');
 
   const handlePriceValue = (data) => {
-setPriceValue(data);
+    setPriceValue(data);
   }
-
   // getFiltersInfo({
   //   category:"ikea",
   //   price: priceValue
@@ -32,7 +30,7 @@ setPriceValue(data);
         </ul>
       </div>
       <div className="company">
-      <h3>Company</h3>
+        <h3>Company</h3>
         <select name="company">
           <option value="all">All</option>
           <option value="marcos">Marcos</option>
@@ -41,18 +39,18 @@ setPriceValue(data);
         </select>
       </div>
       <div className="price">
-      <h3>Price</h3>
+        <h3>Price</h3>
         <form action="price">
           <p>${priceValue} </p>
-          <input type="range" name="price" id="price" max="3100" min="0"  value={priceValue}
-          onChange={(el) => {
+          <input type="range" name="price" id="price" max="3100" min="0" value={priceValue}
+            onChange={(el) => {
               setPriceValue(el.target.value)
-          }}/>
+            }} />
         </form>
       </div>
       <div className="free-shipping">
         <label htmlFor="free">Free shipping</label>
-        <input type="checkbox" name="freeShipping"/>
+        <input type="checkbox" name="freeShipping" />
       </div>
       <div className="clear-filters">
         <button>Clear filters</button>
