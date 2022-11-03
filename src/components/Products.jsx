@@ -12,11 +12,6 @@ function Products({ getProductsData }) {
   const [shipping, setShipping] = useState(false);
 
 
-  const handlePriceValue = (data) => {
-    setPriceValue(data);
-  }
-
-
   const fetchProductsData = async () => {
     setLoading(true);
     try {
