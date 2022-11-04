@@ -10,6 +10,7 @@ import "./style/loading.css"
 import "./style/products.css"
 import "./style/singleProduct.css"
 import "./style/aside.css"
+import "./style/cart.css"
 import SingleProductPage from './components/SingleProductPage'
 
 
