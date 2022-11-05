@@ -51,6 +51,11 @@ function Cart({ cartData, quantity }) {
                </button>
         </div>
       </div>
+      <div className="buttons">
+        <button className="continue"></button>
+        <button className="clear-cart"></button>
+      </div>
+      
     </main>
   )
 }
