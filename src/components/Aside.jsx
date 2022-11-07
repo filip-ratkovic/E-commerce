@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useMemo } from 'react';
+import React, { useState } from 'react'
 
 function Aside() {
   const [priceValue, setPriceValue] = useState(3100);
@@ -7,12 +6,7 @@ function Aside() {
   const handlePriceValue = (data) => {
     setPriceValue(data);
   }
-  // getFiltersInfo({
-  //   category:"ikea",
-  //   price: priceValue
-  // })
-
-
+ 
 
   return (
     <div className="aside">

@@ -34,8 +34,8 @@
 .product-content {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  gap: 25px;
 }
 
 .product-card {
@@ -44,8 +44,8 @@
 }
 
 .product-card img {
-  width: 100%;
-  height: 250px;
+  width: 100% ;
+  height: 270px;
   border-radius: 4px;
 }
 
@@ -75,7 +75,7 @@
   position: relative;
   width: 100%;
   border-radius: 4px;
-  height: 250px;
+  height: 270px;
   cursor: pointer;
 }
 
