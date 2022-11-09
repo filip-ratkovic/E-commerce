@@ -2,8 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 
 
-function Cart({ cartData, quantity }) {
-  console.log(cartData)
+function Cart({ cartData, quantity }) 
+const korpa = [];
+korpa.push(cartData)
+console.log(korpa);
+
   const [counter, setCounter] = useState(quantity)
   return (
     <main className="cart-main">
