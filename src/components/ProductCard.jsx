@@ -7,10 +7,10 @@ function ProductCard({ name, id, price, image }) {
         <div className="product-card">
             <Link to={`/products/${id}`}>
                 <div className="product-card-image">
-                    <img src={image} alt={name} />
+                    <img id="product-img" src={image} alt={name} />
                     <div className="product-card-button">
                         <button >
-                            <img src="https://img.icons8.com/external-becris-lineal-becris/64/FFFFFF/external-loupe-mintab-for-ios-becris-lineal-becris.png" />
+                            <img  src="https://img.icons8.com/external-becris-lineal-becris/64/FFFFFF/external-loupe-mintab-for-ios-becris-lineal-becris.png" />
                         </button>
                     </div>
                 </div> </Link>

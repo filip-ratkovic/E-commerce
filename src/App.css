@@ -180,3 +180,9 @@ nav a:hover {
     cursor: pointer;
 }
 
+@media (max-width: 720px)  {
+    nav{
+        display:none;
+    }
+}
+

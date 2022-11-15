@@ -125,3 +125,25 @@
   .image-active{
     border:solid 1px red;
   }
+
+  @media (max-width: 768px) {
+    .single-product-card{
+      display: flex;
+      flex-direction: column;
+      margin: 5px;
+    }
+
+    .single-product-text {
+      width: 100%;
+margin: 5px;
+    }
+    .image-conteiner{
+      width: 100%;
+    }
+    .images-conteiner {
+      width: 100%;
+    }
+    #small-image{
+      width: 19%;
+    }
+  }
