@@ -1,18 +1,18 @@
 :root {
     --white: #fff;
-    --white2:#e7f1f1;
+    --white2: #e7f1f1;
     --black: #313131;
-    --black2:#464646;
-    --grey:#888; 
-    --primary:#dbd0cc;
-    --mixed: linear-gradient(90deg, #4b9398 , #e7f1f1);
-    --blue:#4b9398;
-    --blueLight:#0bcece;
-    --gold:#e4a23d;
-    --blueBtn:#26596d;
-    --tittle:24px;
-    --text:16px;
-    --number:12px;
+    --black2: #464646;
+    --grey: #888;
+    --primary: #dbd0cc;
+    --mixed: linear-gradient(90deg, #4b9398, #e7f1f1);
+    --blue: #4b9398;
+    --blueLight: #0bcece;
+    --gold: #e4a23d;
+    --blueBtn: #26596d;
+    --tittle: 24px;
+    --text: 16px;
+    --number: 12px;
 }
 
 * {
@@ -27,9 +27,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: var(--text);
     position: relative;
+    overflow: hidden;
 }
 
-nav {
+.nav-cont {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,7 +39,7 @@ nav {
 .nav-name {
     width: 200px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 nav a {
@@ -68,8 +69,8 @@ nav a:hover {
 }
 
 .nav-cart-num {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: var(--blue);
     color: var(--white);
@@ -77,6 +78,7 @@ nav a:hover {
     top: -5px;
     right: -5px;
     text-align: center;
+    font-style: 10px;
 }
 
 
@@ -180,9 +182,48 @@ nav a:hover {
     cursor: pointer;
 }
 
-@media (max-width: 720px)  {
-    nav{
-        display:none;
-    }
+.nav-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    outline: none;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+@media (max-width: 550px) {
+    .nav-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-cont {
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: -100px;
+    }
+    .nav-name {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-cartLogin{
+        flex-direction: column;
+        align-self: start;
+    }
+
+    .nav-name p {
+        margin-bottom: 10px;
+    }
+
+    .nav-cart span {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}

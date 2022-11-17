@@ -139,11 +139,15 @@ margin: 5px;
     }
     .image-conteiner{
       width: 100%;
+      height:100%;
     }
     .images-conteiner {
       width: 100%;
     }
     #small-image{
       width: 19%;
+    }
+    .single-product-image  {
+      height: 350px;
     }
   }
