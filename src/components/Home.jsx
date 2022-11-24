@@ -1,17 +1,24 @@
 import React from 'react'
+import chair from "../photo/chair.png"
+import chairy from "../photo/chairy.png"
+import sofa from "../photo/sofa.png"
+
 
 function Home() {
   return (
 
     <main className="home-main">
       <div className="box-container">
-      <div className="box">
-        
-      </div>
-      </div>
-              {/* <img id="jedan" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="asdfg" />
+        <div className="box">
 
-        <img id="dva" src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80" alt="stolica" /> */}
+        </div>
+        <div className="image-conteiner">
+<img className="image one" src={chair} alt="blue chair" />
+<img className="image two" src={chairy} alt="yellow chair" />
+<img className="image tree" src={sofa} alt="sofa" />
+</div>
+      </div>
+
 
     </main>
   )
