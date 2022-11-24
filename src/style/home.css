@@ -20,7 +20,7 @@
     height: 34.64em;
     border-radius: 4em/1.6em;
     background: #f4d769;
-    animation: rotate 12s infinite;
+    animation: rotates 18s infinite;
     z-index: 1;
 }
 
@@ -45,7 +45,7 @@
     transform: rotate(-60deg);
   }
 
-  @keyframes rotate {
+  @keyframes rotates {
     0%{
         transform: rotate(0deg);
         background-color:#f4d769;
@@ -94,16 +94,68 @@
 }
 
 .image-conteiner{
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     border-radius:50%;
     position: absolute;
-    top: 100px;
-    left: 400px;
+    top: 50px;
+    left: -140px;
     background-color:transparent;
     z-index: 1;
+    animation:rotateImgCont 12s infinite;
 }
 .image{
-    width: 200px;
-  
+    position: absolute;
+    animation:rotateImg 12s infinite;
+}
+
+.one {
+width: 400px;
+top: -100px;
+left: -90px;
+}
+
+.two {
+width: 300px;
+top: 140px;
+right: -190px;
+transform:rotate(7deg)
+}
+
+.tree{
+width: 300px;
+bottom: -30px;
+left: 10px;
+transform:rotate(7deg);
+
+}
+
+@keyframes rotateImgCont {
+    0%{
+        transform: rotate(0deg);
+    }
+    33%{
+        transform: rotate(120deg);
+    }
+    66%{
+        transform: rotate(240deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateImg {
+    0%{
+        transform: rotate(0deg);
+    }
+    33%{
+        transform: rotate(-120deg);
+    }
+    66%{
+        transform: rotate(-240deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
 }
