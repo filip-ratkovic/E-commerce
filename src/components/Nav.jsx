@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import logo from "../photo/logo.png"
+
 
 function Nav() {
   const [homeActive, setHomeActive] = useState(true);
@@ -72,7 +74,7 @@ function Nav() {
   return (
     <nav>
        <div className="nav-logo">
-          <img src="https://react-course-comfy-sloth-store.netlify.app/static/media/logo.221f6b13.svg" alt="logo" style={{ width: "150px" }} />
+          <img src={logo} alt="logo" style={{ width: "100px" }} />
         </div>
     {(toggleMenu || screenWidth > 550) && (
        <div className="nav-cont">
