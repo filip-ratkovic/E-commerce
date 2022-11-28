@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import logo from "../photo/logo.png"
 
 
-function Nav() {
+function Nav({cartNumber}) {
   const [homeActive, setHomeActive] = useState(true);
   const [productsActive, setProductsActive] = useState(false);
   const [cartActive, setCartActive] = useState(false);
@@ -93,7 +93,7 @@ function Nav() {
           <div className='nav-cart'><Link to="/korpa">
             <span className={`${cartActive ? "nav-active" : ""}`} onClick={handleCartClick}>Cart</span>
             <img src="https://img.icons8.com/material-rounded/24/000000/shopping-cart.png" alt="cart" />
-            <div className="nav-cart-num">0</div>
+            <div className="nav-cart-num">{cartNumber}</div>
           </Link></div>
           <div className='nav-login'><Link to="/login">
             <span className={`${loginActive ? "nav-active" : ""}`} onClick={handleLoginClick}>Login</span>
@@ -104,7 +104,11 @@ function Nav() {
        </div>
     )}
      <button className="nav-btn" onClick={handleToggle}>
-      <img style={{ width:"30px"}} src="https://img.icons8.com/ios-filled/50/null/menu-rounded.png"/></button>
+      <img style={{ width:"30px"}} 
+      src="https://img.icons8.com/ios-filled/50/null/menu-rounded.png"
+      alt="btn"/>
+    
+      </button>
     </nav>
   )
 }

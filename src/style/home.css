@@ -289,7 +289,7 @@
 .home-btn{
     padding: 20px 20px;
     width: 150px;
-    background-color: #12aec2;
+    background-color: var(--blue);
     color: var(--white);
     border: none;
     outline: none;
@@ -301,4 +301,17 @@
 .home-btn:hover {
     transform:scale(1.05);
     background-color:#2bcadf;
+}
+
+@media (max-width: 768px) {
+    .home-main {
+        flex-direction: column;
+    }
+    .photo-main {
+        width: 100%;
+    }
+    .home-text {
+        margin: 10px;
+        width: 100%;
+    }
 }

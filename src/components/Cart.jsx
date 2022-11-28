@@ -1,30 +1,46 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 var korpa = [];
 
-function Cart({ cartData, quantity }) {
+function Cart({ cartData, quantity,getCartNumber }) {
   const [counter, setCounter] = useState(quantity);
-console.log(korpa);
-  if (cartData == undefined) {
-    return <div>prazno</div>
+  const [cart, setCart] = useState(korpa);
+  if (cartData === undefined) {
+    return <div> Korpa je prazna.
+
+<Link to="/products">
+  <button className="cart-btn">Back shopping</button>
+</Link>
+    </div>
   }
 
   let postoji=0
-   if(korpa.length===0){
-    korpa.push(cartData)
+   if(cart.length===0){
+    cart.push(cartData)
    }
    else{
-    for(var i=0;i<korpa.length;i++){
-     if(korpa[i].id=== cartData.id){
+    for(var i=0;i<cart.length;i++){
+     if(cart[i].id=== cartData.id){
       postoji++
      }
     }
     if(postoji===0){
-      korpa.push(cartData)
+      cart.push(cartData)
     }
    }
 
-  
+   getCartNumber(cart.length)
+
+   const removeCart = (id) => {
+    const newCart = cart.filter((carts) =>  carts.id !== id);
+    console.log(newCart);
+    setCart(newCart);
+    korpa = newCart;
+}
+if(cart.length === 0) {
+  return <div>prazn</div>
+}
   return (
     <main className="cart-main">
       <header className="cart-header">
@@ -34,7 +50,7 @@ console.log(korpa);
         <p>Subtotal</p>
       </header>
       <div className="cart-items">
-        {korpa.map((item) => {
+        {cart.map((item) => {
           return <div className="cart-product">
             <section className="image-section">
               <img src={item.images[0].url} alt={item.name} />
@@ -65,7 +81,9 @@ console.log(korpa);
             <section className="subtotal">
               <p>{counter * item.price / 100}</p>
             </section>
-            <button className="delete-btn">
+            <button className="delete-btn" onClick={()=>{
+              removeCart(item.id)
+            }}>
               <img src="https://img.icons8.com/ios-glyphs/25/000000/delete-forever.png" />
             </button>
           </div>

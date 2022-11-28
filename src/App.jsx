@@ -19,11 +19,15 @@ function App() {
   const [productsData, setProductData] = useState([]);
   const [cartData, setCartData] = useState();
   const [quantity, setQuantity] = useState();
+  const [cartNumber, setCartNumber] = useState(0);
 
   const addToCart = (data) => {
     setCartData(data)
   }
 
+  const getCartNumber = (data) => {
+    setCartNumber(data)
+  }
 
   const quantityData = (data) => {
     setQuantity(data)
@@ -35,15 +39,16 @@ function App() {
   }
   return (
     <div>
-      <Nav/>
+      <Nav cartNumber = {cartNumber}/>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={<Products getProductsData={getProductsData}/>} />
-        <Route path="/korpa" element={<Cart cartData={cartData} quantity={quantity}/>} />
+        <Route path="/korpa" element={<Cart cartData={cartData} quantity={quantity} getCartNumber={getCartNumber}/>} />
         <Route path="/login" element={<Login/>} />
         {productsData.map((singleProduct) => {
         return <Route path={`/products/${singleProduct.id}`} 
-        element={<SingleProductPage singleProductId={singleProduct.id} addToCart={addToCart} quantityData={quantityData} />} />
+        element={<SingleProductPage singleProductId={singleProduct.id} addToCart={addToCart}
+         quantityData={quantityData}  />} />
       })}
       </Routes>
     </div>
