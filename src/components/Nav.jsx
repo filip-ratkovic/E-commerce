@@ -14,41 +14,53 @@ function Nav({cartNumber}) {
 
   const handleHomeClick = event => {
     if (homeActive) {
+      setToggleMenu(!toggleMenu)   
     } else {
       setHomeActive(curent => !curent);
       setProductsActive(false)
       setCartActive(false);
       setLoginActive(false);
-    }
+      setToggleMenu(!toggleMenu)   
+     }
   }
 
   const handleProductsClick = event => {
     if (productsActive) {
+      setToggleMenu(!toggleMenu)   
+
     } else {
       setProductsActive(curent => !curent);
       setHomeActive(false)
       setCartActive(false);
       setLoginActive(false);
+      setToggleMenu(!toggleMenu)   
     }
   }
 
   const handleCartClick = event => {
     if (cartActive) {
+      setToggleMenu(!toggleMenu)   
+
     } else {
       setCartActive(curent => !curent);
       setHomeActive(false)
       setProductsActive(false);
       setLoginActive(false);
+      setToggleMenu(!toggleMenu)   
     }
   }
 
   const handleLoginClick = event => {
+    
     if (loginActive) {
+      setToggleMenu(!toggleMenu)   
+
     } else {
       setLoginActive(curent => !curent);
       setHomeActive(false)
       setCartActive(false);
       setProductsActive(false);
+      setToggleMenu(!toggleMenu)   
     }
   }
 

@@ -24,6 +24,7 @@
 .product-page {
   display: flex;
   margin-top: 30px;
+  margin-left: 30px;
 }
 
 
@@ -36,10 +37,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
   gap: 25px;
+
 }
 
 .product-card {
-  background-color: var(--white);
+  background-color: var(--white2);
   border-radius: 4px;
 }
 
@@ -54,6 +56,7 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 15px;
+  
 }
 
 .product-card-name {
@@ -183,6 +186,7 @@ cursor: pointer;
 .product-page {
 flex-direction: column;
 width: 100%;
+margin-left: 5px;
 }
 .product-container{
   width: 100%;
