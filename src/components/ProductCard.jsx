@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function ProductCard({ name, id, price, image }) {
+
+    let productLength = 0;
+    productLength ++
+    console.log(productLength)
     return (
         
         <div className="product-card">
