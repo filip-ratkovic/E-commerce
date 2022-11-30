@@ -151,16 +151,7 @@
   margin-top: 5px;
 }
 
-.product-sort-by {
-  margin-top: 5px;
-}
 
-.product-sort-by select {
-border:none;
-outline: none;
-font-size: 16px;
-cursor: pointer;
-}
 
 @media (max-width: 930px )and (min-width: 768px)  {
   .product-card{

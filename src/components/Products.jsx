@@ -113,16 +113,7 @@ function Products({ getProductsData }) {
               <p>{productsData.length} products found</p>
             </div>
           </div>
-          <div className="product-sort-by">
-            <label htmlFor="">Sort by:</label>
-            <select name="sort" id="sort">
-              <option value="price-lowest">Price lowest</option>
-              <option value="price-highest">Price highest</option>
-              <option value="name-a">Name (a - z) </option>
-              <option value="name-z"
-              >Name (z - a)</option>
-            </select>
-          </div>
+
         </div>
         <div className='product-content'>
           {

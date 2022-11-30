@@ -26,6 +26,10 @@
   .aside input, select, option {
     cursor: pointer;
   }
+  .aside li:hover {
+    color: var(--black2);
+    font-size: 18px;
+  }
 
   #search{
     width: 80%;
