@@ -30,6 +30,10 @@ function Cart({ cartData, quantity,getCartNumber }) {
     }
    }
 
+   let getCount = (data) => {
+    setCounter(data)
+   }
+
    getCartNumber(cart.length)
 
    const removeCart = (id) => {
@@ -74,7 +78,8 @@ if(cart.length === 0) {
               <h1>{counter}</h1>
 
               <button onClick={() => {
-                setCounter(counter + 1)
+                setCounter(
+                   counter + 1)
               }}><h1>+</h1></button>
             </section>
 
