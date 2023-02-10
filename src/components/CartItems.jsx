@@ -1,84 +1,49 @@
-// import React from 'react'
-// import { useState } from 'react'
-// var korpa = [];
+import React , {useState} from 'react'
+var korpa = []
 
-// function Cart({ cartData, quantity }) {
-//   const [counter, setCounter] = useState(quantity);
-// console.log(korpa);
-//   if (cartData == undefined) {
-//     return <div>prazno</div>
-//   }
+function CartItems(props) {
+    const {item,quantity} = props;
+    const [counter, setCounter] = useState(quantity);
+    const [product, setProduct] = useState(item);
+  return (
+    <div className="cart-product">
+            <section className="image-section">
+              <img src={product.images[0].url} alt={product.name} />
+              <div className="cart-name">
+                <p>{product.name}</p>
+              </div>
+            </section>
 
-//   var postoji=0
-//    if(korpa.length==0){
-//     korpa.push(cartData)
-//    }
-//    else{
-//     for(var i=0;i<korpa.length;i++){
-//      if(korpa[i].id== cartData.id){
-//       postoji++
-//      }
-//     }
-//     if(postoji==0){
-//       korpa.push(cartData)
-//     }
-//    }
+            <section className="price">
+              <p>${product.price / 100}</p>
+            </section>
 
-  
-//   return (
-//     <main className="cart-main">
-//       <header className="cart-header">
-//         <p>Item</p>
-//         <p>Price</p>
-//         <p>Quantity</p>
-//         <p>Subtotal</p>
-//       </header>
-//       <div className="cart-items">
-//         {korpa.map((item) => {
-//           return <div className="cart-product">
-//             <section className="image-section">
-//               <img src={item.images[0].url} alt={item.name} />
-//               <div className="cart-name">
-//                 <p>{item.name}</p>
-//               </div>
-//             </section>
+            <section className="quantity">
+              <button onClick={() => {
+                if (counter < 2) {
+                  counter = 1;
+                }
+                setCounter(counter - 1)
+              }}><h1>-</h1></button>
 
-//             <section className="price">
-//               <p>${item.price / 100}</p>
-//             </section>
+              <h1>{counter}</h1>
 
-//             <section className="quantity">
-//               <button onClick={() => {
-//                 if (counter < 2) {
-//                   counter = 1;
-//                 }
-//                 setCounter(counter - 1)
-//               }}><h1>-</h1></button>
+              <button onClick={() => {
+                setCounter(
+                   counter + 1)
+              }}><h1>+</h1></button>
+            </section>
 
-//               <h1>{counter}</h1>
+            <section className="subtotal">
+              <p>{counter * product.price / 100}</p>
+            </section>
+            {/* <button className="delete-btn" onClick={()=>{
+              removeCart(product.id)
+            }}>
+              <img src="https://img.icons8.com/ios-glyphs/25/000000/delete-forever.png" />
+            </button> */}
+          </div>
+  )
+}
 
-//               <button onClick={() => {
-//                 setCounter(counter + 1)
-//               }}><h1>+</h1></button>
-//             </section>
-
-//             <section className="subtotal">
-//               <p>{counter * item.price / 100}</p>
-//             </section>
-//             <button className="delete-btn">
-//               <img src="https://img.icons8.com/ios-glyphs/25/000000/delete-forever.png" />
-//             </button>
-//           </div>
-//         })}
-
-//       </div>
-//       <div className="buttons">
-//         <button className="continue"></button>
-//         <button className="clear-cart"></button>
-//       </div>
-
-//     </main>
-//   )
-// }
-
-// export default Cart
+export default CartItems
